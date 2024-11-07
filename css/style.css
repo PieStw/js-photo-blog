@@ -11,7 +11,7 @@
   .container {
     margin: 0 auto;
     padding: 0 10px;
-    width: 1000px;
+    width: 1600px;
     max-width: 100%;
   }
 
@@ -43,8 +43,9 @@
     align-items: center;
     height: 100%;
     position: relative;
+    padding-bottom: 100px;
+    padding-top: 100px;
   }
-
 
   .card-container{
     display: flex;

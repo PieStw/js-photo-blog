@@ -8,7 +8,7 @@ async function getPosts() {
     .then((data) => {
         for(let i = 0; i < 6; i++){
             postList[i].id = data[i].id;
-            postList[i].text = data[i].body;
+            postList[i].text = data[i].title;
         }
       });
 }
@@ -35,9 +35,9 @@ async function generatePosts() {
     for(let i = 0; i < 6; i++){
         
         document.getElementById("main").innerHTML += `
-        <div class="col-12 col-md-6 col-lg-4 card-container">
+        <div class="col-12 col-md-6 col-lg-4 card-container" id="card-${i}">
             <div class="card">
-                <img src="${postList[i].img}" class="card-img">
+                <img src="${postList[i].img}" class="card-img" id="post-img">
                 <div class="card-body">
                     <p class="card-text">${postList[i].text}</p>
                 </div>
@@ -50,6 +50,17 @@ async function generatePosts() {
     document.getElementById("spinner").classList.add("d-none");
     document.getElementById("main").classList.remove("d-none");
 
+    for(let i = 0; i < 6; i++){
+        
+        document.getElementById(`card-${i}`).addEventListener("click", () =>{
+
+            const post = document.getElementById(`card-${i}`)
+
+            document.getElementById("img-overlay").src = document.getElementById("post-img").src;
+            document.getElementById("overlay").classList.remove("d-none");
+
+        });
+    }
     
 }
 
@@ -58,3 +69,4 @@ for(let i = 0; i < 6; i++){
 }
 
 generatePosts();
+

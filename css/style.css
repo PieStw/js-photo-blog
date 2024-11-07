@@ -54,7 +54,7 @@
   }
 
   .card-container:hover{
-    transform: rotate(-25deg);
+    transform: rotate(-20deg);
   }
 
   .card{

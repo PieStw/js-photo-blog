@@ -49,6 +49,11 @@
   .card-container{
     display: flex;
     justify-content: center;
+    transition: transform 0.4s;
+  }
+
+  .card-container:hover{
+    transform: rotate(-25deg);
   }
 
   .card{

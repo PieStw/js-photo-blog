@@ -37,7 +37,7 @@ async function generatePosts() {
         document.getElementById("main").innerHTML += `
         <div class="col-12 col-md-6 col-lg-4 card-container" id="card-${i}">
             <div class="card">
-                <img src="${postList[i].img}" class="card-img" id="post-img">
+                <img src="${postList[i].img}" class="card-img" id="img-${i}">
                 <div class="card-body">
                     <p class="card-text">${postList[i].text}</p>
                 </div>
@@ -54,19 +54,24 @@ async function generatePosts() {
         
         document.getElementById(`card-${i}`).addEventListener("click", () =>{
 
-            const post = document.getElementById(`card-${i}`)
-
-            document.getElementById("img-overlay").src = document.getElementById("post-img").src;
+            document.getElementById("img-overlay").src = document.getElementById(`img-${i}`).src;
             document.getElementById("overlay").classList.remove("d-none");
 
         });
     }
+
+    document.getElementById("bottone").addEventListener("click", () =>{
+
+        document.getElementById("overlay").classList.add("d-none");
+    
+    });
     
 }
 
 for(let i = 0; i < 6; i++){
     postList.push(member = {id: i, text: "", img: ""});
 }
+
 
 generatePosts();
 

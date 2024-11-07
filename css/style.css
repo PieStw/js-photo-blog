@@ -19,7 +19,7 @@
 
   .header{
     background-image: url("../img/wall.png");
-    height: 150px;
+    height: 15vh;
   }
 
   .title-container{
@@ -39,7 +39,8 @@
     background-image: url("../img/cork.png");
     display: flex;
     justify-content: center;
-    height: 100%;
+    align-items: center;
+    height: 85vh;
     position: relative;
   }
 

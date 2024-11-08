@@ -3,24 +3,23 @@ const postList = [];
 
 
 async function getPosts() {
-    await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6')
-    .then(response => response.json())
-    .then((data) => {
-        for(let i = 0; i < 6; i++){
-            postList[i].id = data[i].id;
-            postList[i].text = data[i].title;
-        }
-      });
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
+    const data = await response.json();
+    
+    for(let i = 0; i < 6; i++){
+        postList[i].id = data[i].id;
+        postList[i].text = data[i].title;
+    }
 }
 
 async function getImgs() {
-    await fetch('https://jsonplaceholder.typicode.com/photos?_limit=6')
-    .then(response => response.json())
-    .then((data) => {
-        for(let i = 0; i < 6; i++){
-            postList[i].img = data[i].url;
-        }
-      });
+    const response = await fetch('https://jsonplaceholder.typicode.com/photos?_limit=6');
+    const data = await response.json();
+    
+    for(let i = 0; i < 6; i++){
+        postList[i].img = data[i].url;
+    }
+      
 }
 
 async function generatePosts() {
